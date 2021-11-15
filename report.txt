@@ -1,0 +1,100 @@
+==================
+setRequiredNumber(int nemployee, int starttime, int endtime)
+==================
+
+------------------
+Report
+------------------
+  Input space:
+    0 <= nemployee,
+    0 <= starttime,
+    0 <= endtime
+  ----------------
+  Partition #1:
+    starttime > endtime
+    // test whether we can assign one employee between hour 8 and hour 10
+    test_starttime_gt_endtime:
+      input:
+        nemployee = 1,
+        starttime = 8,
+        endtime = 10
+      expected: setRequiredNumber(1, 8, 10) = void (unchanged schedule)
+  ----------------
+  Partition #2:
+    starttime < endtime,
+    workingEmployees > nemployee
+    // test desc 2
+    test_starttime_lt_endtime_and_workingEmployees_gt_nemployee:
+      input:
+        nemployee = 1
+        starttime = 10,
+        endtime = 8,
+        workingEmployees = 3,
+      expected: setRequiredNumber(1, 10, 8) =
+        requiredNumber = 1,
+        workingEmployees = 1
+  ----------------
+  Partition #3:
+    starttime < endtime,
+    workingEmployees < nemployee
+    // test desc 3
+    test_starttime_lt_endtime_and_workingEmployees_lt_nemployee
+      input:
+        nemployee = 3
+        starttime = 10,
+        endtime = 8,
+        workingEmployees = 1,
+      expected: setRequiredNumber(3, 10, 8, 1) =
+        requiredNumber = 3,
+        workingEmployees = 1
+
+
+==================
+nextIncomplete(int currenttime)
+==================
+
+------------------
+Report
+------------------
+  Input space:
+    currenttime >= 0,
+    currenttime < size
+  ----------------
+  Partition #1:
+    foreach hour in schedule:
+      hour.readSchedule(currenttime)
+      hour.workingEmployees.length() < hour.requiredNumber
+    // test that the number of working employees in a 
+    // schedule for a given time is less than the required
+    // number of workers
+    test_workingEmployees_lt_requiredNumber
+      input:
+        currenttime 2
+        schedule: [new Hour(1, 0), new Hour(3, 5), new Hour(5, 1)]
+      expected: <time of closest hour to currenttime with workingEmployees < requiredNumber>
+  ----------------
+    Partition #2:
+    foreach hour in schedule:
+      hour.readSchedule(currenttime)
+      hour.workingEmployees.length() < hour.requiredNumber
+    // test that the number of working employees in a 
+    // schedule for a given time is less than the required
+    // number of workers
+    test_workingEmployees_lt_requiredNumber
+      input:
+        currenttime 2
+        schedule: [new Hour(0, 0), new Hour(3, 5), new Hour(6, 4)]
+      expected: -1
+  ----------------
+  Partition #3:
+    foreach hour in schedule:
+      hour.readSchedule(currenttime)
+      hour.workingEmployees.length() >= hour.requiredNumber
+    // test that the number of working employees in a 
+    // schedule for a given time is greater than or equal to
+    // the required number of workers
+    test_workingEmployees_gtOrEq_requiredNumber
+      input:
+        currenttime 2
+        schedule: [new Hour(0, 1), new Hour(3, 2), new Hour(5, 1)]
+      expected: <time of closest hour to currenttime with workingEmployees < requiredNumber>
