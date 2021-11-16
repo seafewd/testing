@@ -49,7 +49,7 @@ class Set_Insert_Test {
         set.insert(1);
         assertEquals(1, set.toArray().length);
     }
-    
+
     @Test
     void statementFiveCoverage(){
         // Purpose: Make sure we do NOT enter the for loop
