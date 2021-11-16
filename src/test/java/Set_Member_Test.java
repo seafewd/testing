@@ -12,7 +12,7 @@ class Set_Member_Test {
     Set set = new Set();
 
     @BeforeEach
-    void setup() {
+    void setUp() {
         set.insert(7);
         set.insert(-1);
         set.insert(5);
