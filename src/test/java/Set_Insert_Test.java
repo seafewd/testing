@@ -7,7 +7,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class Set_Insert_Test {
 
-
     /**
      * Statement coverage tests
      *
@@ -43,7 +42,6 @@ class Set_Insert_Test {
 
     }
 
-
     @Test
     void statementFiveCoverage(){
         // Purpose: Make sure we do NOT enter the for loop
@@ -57,7 +55,6 @@ class Set_Insert_Test {
         // Confirms that we have executed statement 5
         assertEquals(1, set.toArray().length);
     }
-
 
     // make sure there are no duplicate items in set
     @Test
