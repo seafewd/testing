@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Set_Member_Test" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-11-16T21:36:50" hostname="Alexanders-MacBook-Air.local" time="0.008">
+  <properties/>
+  <testcase name="checkIsMember2()" classname="Set_Member_Test" time="0.002"/>
+  <testcase name="checkIsNotMember()" classname="Set_Member_Test" time="0.002"/>
+  <testcase name="checkIsMember()" classname="Set_Member_Test" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
