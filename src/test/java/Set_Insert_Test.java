@@ -16,12 +16,13 @@ class Set_Insert_Test {
      * Statement 4: if (a.get(i) == x)
      * Statement 5: a.add(x);
      */
+
+    // Purpose: Make sure we DO enter the for loop and execute statement 2,
+    // consequently executing statement 1
+    //  * Statement 1: the for loop
+    //  * Statement 2: if (a.get(i) > x)
     @Test
     void statementOneTwoThreeCoverage(){
-        // Purpose: Make sure we DO enter the for loop and execute statement 2,
-        // consequently executing statement 1
-        //  * Statement 1: the for loop
-        //  * Statement 2: if (a.get(i) > x)
 
         Set set = new Set();
         set.insert(3);
@@ -49,13 +50,13 @@ class Set_Insert_Test {
         assertEquals(1, set.toArray().length);
     }
 
+    // Purpose: Make sure we do NOT enter the for loop
+    // We know the length is zero so we know the loop wont run
+    // instead it will just add the element
+    //  * Statement 5: a.add(x);
+
     @Test
     void statementFiveCoverage(){
-        // Purpose: Make sure we do NOT enter the for loop
-        // We know the length is zero so we know the loop wont run
-        // instead it will just add the element
-        //  * Statement 5: a.add(x);
-
         Set set = new Set();
         set.insert(3);
 
