@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Set_Intersect_Test" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-11-16T21:36:50" hostname="Alexanders-MacBook-Air.local" time="0.041">
-  <properties/>
-  <testcase name="testRemove2()" classname="Set_Intersect_Test" time="0.035"/>
-  <testcase name="testRemove()" classname="Set_Intersect_Test" time="0.004"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

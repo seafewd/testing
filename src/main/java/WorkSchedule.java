@@ -1,18 +1,22 @@
 import java.util.Arrays;
 
 public class WorkSchedule {
-    private final WorkSchedule.Hour[] schedule;
+    private final Hour[] schedule;
 
     public WorkSchedule(int time) {
-        this.schedule = new WorkSchedule.Hour[time];
+        this.schedule = new Hour[time];
 
         for(int i = 0; i < time; ++i) {
-            this.schedule[i] = new WorkSchedule.Hour(0);
+            this.schedule[i] = new Hour(0);
         }
 
     }
 
-    public WorkSchedule.Hour readSchedule(int time) {
+    public Hour[] getSchedule() {
+        return this.schedule;
+    }
+
+    public Hour readSchedule(int time) {
         return this.schedule[time];
     }
 
