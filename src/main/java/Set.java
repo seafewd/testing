@@ -17,29 +17,24 @@ public class Set {
   }
 
   public void insert(int x) {
-    for (int i = 0; i < a.size(); i++) {
+    for (int i = 0; i < a.size(); i++)
       if (a.get(i) > x) {
         a.add(i, x);
         return;
-      } else {
+      } else
         if (a.get(i) == x)
           return;
-      }
-    }
     a.add(x);
   }
 
   public boolean member(int x) {
-    for (int i = 0; i < a.size(); i++) {
-      if (a.get(i) > x) {
-        return false;
-      } else {
-        if (a.get(i) == x) {
-          return true;
-        }
+    boolean isMember = false;
+    for (Integer n : a)
+      if (n == x) {
+        isMember = true;
+        break;
       }
-    }
-    return false;
+    return isMember;
   }
 
   public void intersect(Set s) {

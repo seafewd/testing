@@ -30,6 +30,6 @@ class Set_DistinctClosed_Test {
     @Test
     void distinctClosedMultiplication() {
         ibo = (left, right) -> left * right;
-        assertTrue(set.distinctClosed(ibo));
+        assertFalse(set.distinctClosed(ibo));
     }
 }
