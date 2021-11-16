@@ -19,12 +19,21 @@ class Set_Member_Test {
         set.insert(0);
         set.insert(999);
     }
-    // check whether an inserted element is in a list
+    // check whether an element which we know is in the list,
+    // is in the list
     @Test
     void checkIsMember() {
         assertTrue(set.member(5));
     }
 
+    // check whether a (negative) element is in the list
+    @Test
+    void checkIsMember2() {
+        assertTrue(set.member(-1));
+    }
+
+    // check whether an element which we know is not
+    // in the list, is in the list
     @Test
     void checkIsNotMember() {
         assertFalse(set.member(4));

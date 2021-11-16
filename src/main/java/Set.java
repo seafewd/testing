@@ -17,29 +17,24 @@ public class Set {
   }
 
   public void insert(int x) {
-    for (int i = 0; i < a.size(); i++) {
+    for (int i = 0; i < a.size(); i++)
       if (a.get(i) > x) {
         a.add(i, x);
         return;
-      } else {
+      } else
         if (a.get(i) == x)
           return;
-      }
-    }
     a.add(x);
   }
 
   public boolean member(int x) {
-    for (int i = 0; i < a.size(); i++) {
-      if (a.get(i) > x) {
-        return false;
-      } else {
-        if (a.get(i) == x) {
-          return true;
-        }
+    boolean isMember = false;
+    for (Integer n : a)
+      if (n == x) {
+        isMember = true;
+        break;
       }
-    }
-    return false;
+    return isMember;
   }
 
   public void intersect(Set s) {
@@ -62,14 +57,14 @@ public class Set {
   //   (a, b) -> a + b;
   //   (a, b) -> a - b;
   public boolean distinctClosed(IntBinaryOperator f) {
-    int vi,vj;
-    for (int i = 0; i < a.size(); i++) {
-      for (int j = i; j < a.size(); j++) {
-        vi = a.get(i);
-        vj = a.get(j);
-        if ((member(f.applyAsInt(vi, vj)) && vi != vj)) return true;
+    int vi, vj;
+    for (Integer i : a)
+      for (Integer j : a) {
+        vi = i;
+        vj = j;
+        if (this.member(f.applyAsInt(vi, vj)) && vi != vj)
+          return true;
       }
-    }
     return false;
   }
 }

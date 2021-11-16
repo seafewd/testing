@@ -37,9 +37,16 @@ class Set_Insert_Test {
         assertEquals(2, set.toArray().length);
     }
 
+    // test that we do not add an element that already has
+    // the same value
+    //    if (a.get(i) == x)
+    //      return;
     @Test
     void statementFourCoverage(){
-
+        Set set = new Set();
+        set.insert(1);
+        set.insert(1);
+        assertEquals(1, set.toArray().length);
     }
 
     @Test

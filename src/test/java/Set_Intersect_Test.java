@@ -27,7 +27,7 @@ class Set_Intersect_Test {
     // check that intersect works, ie deletes elements that
     // are not in both sets
     @Test
-    void checkRemove() {
+    void testRemove() {
         int[] smallerArray = {1, 0, -5};
         set.intersect(set2);
         boolean contains = true;
@@ -42,7 +42,7 @@ class Set_Intersect_Test {
     // are not in both sets
     // (different ordering)
     @Test
-    void checkRemove2() {
+    void testRemove2() {
         int[] smallerArray = {1, -5, 0};
         set.intersect(set2);
         boolean contains = true;
