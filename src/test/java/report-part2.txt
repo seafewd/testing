@@ -1,0 +1,13 @@
+We derived the statement coverage tests by looking at each statement in the method
+
+For example, the list for the statements in the method insert we defined in the following way
+
+ * Statement 1: the for loop
+ * Statement 2: if (a.get(i) > x)
+ * Statement 3: a.add(i, x);
+ * Statement 4: if (a.get(i) == x)
+ * Statement 5: a.add(x);
+
+We made sure each to insert and check/assert in such a way that we could in effect guarantee
+that each statement/node was executed. Exactly why we made the decisions we did can be found
+in the comments.
