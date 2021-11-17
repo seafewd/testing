@@ -24,14 +24,20 @@ class Set_Member_Test {
     /**
      * Statement coverage tests (and consequently branch coverage)
      *
+     * Statements tested:
      * Statement 1: the for loop
      * Statement 2: 'if (n == x)'
      * Statement 3: 'isMember = true'
      * Statement 4: 'break'
      * Statement 5: 'return isMember'
+     *
+     * There are three interesting branches
+     * One through the for loop, into the 'n == x'-branch
+     * One through the for loop, when n !=x
+     * One that goes past the for loop ie. when a.length == 0
+     *
+     * The statement coverage tests also covers the branches
      */
-
-
 
     @Test
     void statementCoverage(){
@@ -44,19 +50,14 @@ class Set_Member_Test {
 
         checkIsMember();
         checkIsMember2();
+        checkIsNotMemberEmpty();
 
         // Purpose: If the element is not a member, we will enter the for loop
         // and execute statement 5
         // * Statement 1: the for loop
         // * Statement 5: 'if (n == x)'
         checkIsNotMember();
-
-
-
-
     }
-
-
 
     // check whether an element which we know is in the list,
     // is in the list
@@ -65,16 +66,22 @@ class Set_Member_Test {
         assertTrue(set.member(5));
     }
 
+    // check whether an element which we know is not
+    // in the list, is in the list
+    @Test
+    void checkIsNotMember() {
+        assertFalse(set.member(4));
+    }
+
     // check whether a (negative) element is in the list
     @Test
     void checkIsMember2() {
         assertTrue(set.member(-1));
     }
 
-    // check whether an element which we know is not
-    // in the list, is in the list
     @Test
-    void checkIsNotMember() {
-        assertFalse(set.member(4));
+    void checkIsNotMemberEmpty() {
+        set = new Set();
+        assertFalse(set.member(1));
     }
 }
