@@ -27,10 +27,10 @@ Report
     test_starttime_lt_endtime_and_workingEmployees_gt_nemployee:
       input:
         nemployee = 1
-        starttime = 10,
-        endtime = 8,
+        starttime = 8,
+        endtime = 10,
         workingEmployees = 3,
-      expected: setRequiredNumber(1, 10, 8) =
+      expected: setRequiredNumber(1, 8, 10) =
         requiredNumber = 1,
         workingEmployees = 1
   ----------------
