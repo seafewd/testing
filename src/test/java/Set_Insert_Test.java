@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class Set_Insert_Test {
 
     /**
-     * Statement coverage tests
+     * Statement coverage tests (and consequently branch coverage)
      *
      * Statement 1: the for loop
      * Statement 2: if (a.get(i) > x)
@@ -63,6 +63,7 @@ class Set_Insert_Test {
         // Confirms that we have executed statement 5
         assertEquals(1, set.toArray().length);
     }
+
 
     // make sure there are no duplicate items in set
     @Test
