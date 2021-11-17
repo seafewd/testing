@@ -18,3 +18,15 @@ These tests also covered all the branches, which in this case were
  * Branch 2: not though the for loop (last statement 'a.add(x)')
  * Branch 2: through 'if (a.get(i) > x)'
  * Branch 3: through 'if (a.get(i) == x)'
+
+
+We have explained each decision in the comments
+
+For each class we made a statement and branch coverage method. Each block in that
+method is preceded by a comment stating the purpose followed by a list of the statements
+covered. Perhaps dividing these blocks into separate methods would be preferred, but
+we chose to keep it as one method to avoid a potential explosion in the number of methods.
+
+Note: What we defined as Branch 3 in the distinctClosed-test is from our understanding unreachable
+since the only way to execute the path is to have zero elements in the set, consequently hindering us
+from even entering the first for-loop.

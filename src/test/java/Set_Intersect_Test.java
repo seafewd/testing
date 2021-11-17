@@ -7,6 +7,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class Set_Intersect_Test {
 
+    ///////////////////////////////////////////////////
+    /////////// General functionality tests ///////////
+    ///////////////////////////////////////////////////
+
     Set set = new Set();
     Set set2 = new Set();
 
@@ -52,4 +56,82 @@ class Set_Intersect_Test {
                     contains = false;
         assertTrue(contains);
     }
+
+
+    ///////////////////////////////////////////////////
+    /////// Statement and branch Coverage tests ///////
+    ///////////////////////////////////////////////////
+
+    /**
+     * Statement coverage tests (and consequently branch coverage)
+     *
+     * Statements tested:
+     * Statement 1: the for loop
+     * Statement 2: 'if (a.get(i).equals(s.a.get(j)))'
+     * Statement 3: 'i++'
+     * Statement 4: 'j++'
+     * Statement 5: 'if (a.get(i) < s.a.get(j))
+     * Statement 6: 'a.remove(i)'
+     * Statement 7: 'i++' (line 47)
+     * Statement 8: 'j++' (line 49)
+     *
+     * There are three interesting branches
+     * One via St1 -> St2 -> St3 -> St4 -> out/St1
+     * One via (St1 -> St2) -> St5 -> St6 -> St7 -> out/St1
+     * One via (St1 -> St2 -> St5) -> St8 -> out/St1
+     *
+     * The statement coverage tests also covers the branches since every branch is covered
+     */
+
+
+
+    @Test
+    void statementCoverage(){
+        ///////// Purpose: By making sure we have equal first elements in each set we
+        // can be sure we execute St1, St2, St3 and St4
+        //  * Statement 1: the for loop
+        //  * Statement 2: if (a.get(i) > x)
+        //  * Statement 3: i++
+        //  * Statement 4: j++
+
+        Set s1 = new Set();
+        Set s2 = new Set();
+        s1.insert(1);
+        s2.insert(1);
+        assertEquals(s1.toArray()[0], (s2.toArray()[0]));
+
+
+        ///////// Purpose: By making sure s1[0] < s2[0] we can be sure
+        //  * Statement 5: 'if (a.get(i) < s.a.get(j))
+        //  * Statement 6: 'a.remove(i)'
+        //  * Statement 7: 'i++'
+        s1 = new Set();
+        s2 = new Set();
+        s1.insert(1);
+        s1.insert(2);
+        s2.insert(2);
+        s2.insert(3);
+
+        // current s1 = [1,2]
+        // current s2 = [2,3]
+        Set s3 = new Set();
+        s1.intersect(s2);
+
+        // s1.intersect(s2) should leave us with the set {2} thus
+        assertTrue(!s1.member(1) && s1.member(2) && s1.toArray().length == 1);
+
+
+        ///////// Purpose: Last branch is via St8, which we'll achieve with a.get(i) > a.s.get(j)
+        //  * Statement 8: 'j++' (line 49)
+        s1 = new Set();
+        s2 = new Set();
+        s1.insert(2);
+        s2.insert(1);
+        s1.intersect(s2);
+
+        // s1 should be empty
+        assertEquals(0, s1.toArray().length);
+    }
+
+
 }

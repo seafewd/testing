@@ -21,8 +21,7 @@ public class Set {
       if (a.get(i) > x) {
         a.add(i, x);
         return;
-      } else
-        if (a.get(i) == x)
+      } else if (a.get(i) == x)
           return;
     a.add(x);
   }
