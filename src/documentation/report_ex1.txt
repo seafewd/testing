@@ -16,9 +16,9 @@ Report
     test_starttime_gt_endtime:
       input:
         nemployee = 1,
-        starttime = 8,
-        endtime = 10
-      expected: setRequiredNumber(1, 8, 10) = void (unchanged schedule)
+        starttime = 10,
+        endtime = 8
+      expected: setRequiredNumber(1, 10, 8) = void (unchanged schedule)
   ----------------
   Partition #2:
     starttime < endtime,
@@ -41,10 +41,10 @@ Report
     test_starttime_lt_endtime_and_workingEmployees_lt_nemployee
       input:
         nemployee = 3
-        starttime = 10,
-        endtime = 8,
+        starttime = 8,
+        endtime = 10,
         workingEmployees = 1,
-      expected: setRequiredNumber(3, 10, 8, 1) =
+      expected: setRequiredNumber(3, 8, 10) =
         requiredNumber = 3,
         workingEmployees = 1
 
