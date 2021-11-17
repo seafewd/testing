@@ -10,10 +10,19 @@ class WorkSchedule_NextIncomplete_Test {
 
     // test whether we can get the first instance of an
     // hour which doesn't yet have its positions filled
-    // with workingEmployees
+    // with workingEmployees, or -1 if all positions filled
+
+    // this test doesn't have all positions filled and should
+    // thus return 4 since that is the first hour in which
+    // its required minimum positions aren't filled
+
+    // the test also makes sure that the schedule is unchanged
     @Test
     void test_workingEmployees_lt_requiredNumber() {
         ws = new WorkSchedule(6);
+        WorkSchedule.Hour[] newSchedule = ws.getSchedule();
+        WorkSchedule.Hour[] oldSchedule = Arrays.copyOf(newSchedule, newSchedule.length);
+
         int scheduleStartTime = 1;
         int result = -1;
 
@@ -57,11 +66,24 @@ class WorkSchedule_NextIncomplete_Test {
         // result should now be 4 since hour 4 is the first
         // hour that hasn't yet filled its free positions
         assertEquals(4, result);
+
+        assertArrayEquals(oldSchedule, newSchedule);
+
     }
 
+    // test whether we can get the first instance of an
+    // hour which doesn't yet have its positions filled
+    // with workingEmployees, or -1 if all positions filled
+
+    // this test has all positions filled and should thus
+    // return -1
+
+    // the test also makes sure that the schedule is unchanged
     @Test
     void test_workingEmployees_gtOrEq_requiredNumber() {
         ws = new WorkSchedule(6);
+        WorkSchedule.Hour[] newSchedule = ws.getSchedule();
+        WorkSchedule.Hour[] oldSchedule = Arrays.copyOf(newSchedule, newSchedule.length);
         int scheduleStartTime = 1;
         int result = -1;
 
@@ -107,5 +129,8 @@ class WorkSchedule_NextIncomplete_Test {
         // result should now be 4 since hour 4 is the first
         // hour that hasn't yet filled its free positions
         assertEquals(-1, result);
+
+        assertArrayEquals(oldSchedule, newSchedule);
+
     }
 }
