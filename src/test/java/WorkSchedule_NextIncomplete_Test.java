@@ -15,7 +15,7 @@ class WorkSchedule_NextIncomplete_Test {
     // test whether we can assign one employee between hour 8 and hour 10
     @Test
     void test_starttime_gt_endtime() {
-        ws = new WorkSchedule(100); // ????
+        ws = new WorkSchedule(10); // ????
         WorkSchedule.Hour[] oldSchedule = ws.getSchedule();
         WorkSchedule.Hour[] newSchedule = oldSchedule.clone();
         ws.setRequiredNumber(1, 8, 10);
@@ -27,23 +27,27 @@ class WorkSchedule_NextIncomplete_Test {
     @Test
     void test_starttime_lt_endtime_and_workingEmployees_gt_nemployee() {
         ws = new WorkSchedule(2);
-        ws.addWorkingPeriod("Axel", 10, 8);
-        ws.addWorkingPeriod("Robert", 10, 8);
-        ws.addWorkingPeriod("Pandi", 10, 8);
+        ws.addWorkingPeriod("Axel", 8, 10);
+        ws.addWorkingPeriod("Robert", 8, 10);
+        ws.addWorkingPeriod("Pandi", 8, 10);
         ws.setRequiredNumber(1, 10, 8);
         // assert that these values changed
-        assertTrue(requiredNumber == 1);
-        assertTrue(workingEmployees == 3);
+        for (WorkSchedule.Hour hour : ws.getSchedule()) {
+            assertEquals(1, hour.requiredNumber);
+            assertEquals(3, hour.workingEmployees.length);
+        }
     }
 
     // test whether we can assign one employee between hour 8 and hour 10
     @Test
     void test_starttime_lt_endtime_and_workingEmployees_lt_nemployee() {
-        ws = new WorkSchedule(2);
-        ws.addWorkingPeriod("Snorkle", 10, 8);
-        ws.setRequiredNumber(3, 10, 8);
+        ws = new WorkSchedule(12);
+        ws.addWorkingPeriod("Snorkle", 8, 10);
+        ws.setRequiredNumber(3, 8, 10);
         // assert that these values changed
-        assertTrue(requiredNumber == 3);
-        assertTrue(workingEmployees == 1);
+        for (WorkSchedule.Hour hour: ws.getSchedule()) {
+            assertEquals(3, hour.requiredNumber);
+            assertEquals(1, hour.workingEmployees.length);
+        }
     }
 }
