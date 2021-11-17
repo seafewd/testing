@@ -61,40 +61,31 @@ Report
     currenttime < size
   ----------------
   Partition #1:
-    foreach hour in schedule:
-      hour.readSchedule(currenttime)
-      hour.workingEmployees.length() < hour.requiredNumber
-    // test that the number of working employees in a 
-    // schedule for a given time is less than the required
-    // number of workers
+    // test whether we can get the first instance of an
+    // hour which doesn't yet have its positions filled
+    // with workingEmployees, or -1 if all positions filled
     test_workingEmployees_lt_requiredNumber
       input:
-        currenttime 2
-        schedule: [new Hour(1, 0), new Hour(3, 5), new Hour(5, 1)]
-      expected: <time of closest hour to currenttime with workingEmployees < requiredNumber>
+        schedule: [
+            new Hour(1) - 1 employee working, 1 needed,
+            new Hour(2) - 2 employees working, 2 needed,
+            new Hour(3) - 3 employees working, 3 needed,
+            new Hour(4) - 3 employees working, 4 needed,
+            new Hour(5) - 1 employee working, 2 needed
+        ]
+      expected: 4
   ----------------
-    Partition #2:
-    foreach hour in schedule:
-      hour.readSchedule(currenttime)
-      hour.workingEmployees.length() < hour.requiredNumber
-    // test that the number of working employees in a 
-    // schedule for a given time is less than the required
-    // number of workers
-    test_workingEmployees_lt_requiredNumber
-      input:
-        currenttime 2
-        schedule: [new Hour(0, 0), new Hour(3, 5), new Hour(6, 4)]
-      expected: -1
-  ----------------
-  Partition #3:
-    foreach hour in schedule:
-      hour.readSchedule(currenttime)
-      hour.workingEmployees.length() >= hour.requiredNumber
-    // test that the number of working employees in a 
-    // schedule for a given time is greater than or equal to
-    // the required number of workers
+  Partition #2:
+    // test whether we can get the first instance of an
+    // hour which doesn't yet have its positions filled
+    // with workingEmployees, or -1 if all positions filled
     test_workingEmployees_gtOrEq_requiredNumber
       input:
-        currenttime 2
-        schedule: [new Hour(0, 1), new Hour(3, 2), new Hour(5, 1)]
-      expected: <time of closest hour to currenttime with workingEmployees < requiredNumber>
+        schedule: [
+            new Hour(1) - 1 employee working, 1 needed,
+            new Hour(2) - 2 employees working, 2 needed,
+            new Hour(3) - 3 employees working, 3 needed,
+            new Hour(4) - 4 employees working, 4 needed,
+            new Hour(5) - 2 employee working, 2 needed
+        ]
+      expected: -1

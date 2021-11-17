@@ -32,6 +32,7 @@ class WorkSchedule_SetRequiredNumber_Test {
         int nemployee = 1;
         int starttime = 8;
         int endtime = 10;
+        // workingEmployees = 3
         ws.setRequiredNumber(nemployee, starttime, endtime);
         // add three employees as well as three workingPeriods
         for (int i = starttime; i < endtime; i++) {
@@ -62,6 +63,7 @@ class WorkSchedule_SetRequiredNumber_Test {
         int nemployee = 3;
         int starttime = 8;
         int endtime = 10;
+        // workingEmployees = 1
         ws.setRequiredNumber(nemployee, starttime, endtime);
         // add one employee as well as one workingPeriod
         for (int i = starttime; i < endtime; i++) {

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Set_Insert_Test" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-11-17T14:06:48" hostname="Alexanders-MacBook-Air.local" time="0.015">
+  <properties/>
+  <testcase name="checkArrayIsOrdered()" classname="Set_Insert_Test" time="0.002"/>
+  <testcase name="statementOneTwoThreeCoverage()" classname="Set_Insert_Test" time="0.002"/>
+  <testcase name="statementFiveCoverage()" classname="Set_Insert_Test" time="0.001"/>
+  <testcase name="statementFourCoverage()" classname="Set_Insert_Test" time="0.001"/>
+  <testcase name="checkNoDuplicates()" classname="Set_Insert_Test" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
