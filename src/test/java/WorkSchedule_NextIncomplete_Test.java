@@ -67,6 +67,7 @@ class WorkSchedule_NextIncomplete_Test {
         // hour that hasn't yet filled its free positions
         assertEquals(4, result);
 
+        // make sure the schedule is unchanged
         assertArrayEquals(oldSchedule, newSchedule);
 
     }
@@ -130,6 +131,7 @@ class WorkSchedule_NextIncomplete_Test {
         // hour that hasn't yet filled its free positions
         assertEquals(-1, result);
 
+        // make sure the schedule is unchanged
         assertArrayEquals(oldSchedule, newSchedule);
 
     }
