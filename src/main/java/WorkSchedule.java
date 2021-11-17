@@ -25,6 +25,7 @@ public class WorkSchedule {
         for(int i = starttime; i <= endtime; ++i) {
             this.schedule[i].requiredNumber = nemployee;
             if (nemployee < this.schedule[i].workingEmployees.length) {
+                // bug fix: employee - 1 -> employee
                 this.schedule[i].workingEmployees = (String[])Arrays.copyOf(this.schedule[i].workingEmployees, Math.max(nemployee, 0));
             }
         }
