@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="WorkSchedule_NextIncomplete_Test" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-11-17T11:14:42" hostname="Alexanders-MacBook-Air.local" time="0.052">
-  <properties/>
-  <testcase name="test_starttime_lt_endtime_and_workingEmployees_lt_nemployee()" classname="WorkSchedule_NextIncomplete_Test" time="0.04"/>
-  <testcase name="test_starttime_gt_endtime()" classname="WorkSchedule_NextIncomplete_Test" time="0.005"/>
-  <testcase name="test_starttime_lt_endtime_and_workingEmployees_gt_nemployee()" classname="WorkSchedule_NextIncomplete_Test" time="0.004"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

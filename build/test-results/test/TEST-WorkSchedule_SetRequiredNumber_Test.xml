@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="WorkSchedule_SetRequiredNumber_Test" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-11-17T11:20:23" hostname="Alexanders-MacBook-Air.local" time="0.045">
+  <properties/>
+  <testcase name="test_starttime_lt_endtime_and_workingEmployees_lt_nemployee()" classname="WorkSchedule_SetRequiredNumber_Test" time="0.035"/>
+  <testcase name="test_starttime_gt_endtime()" classname="WorkSchedule_SetRequiredNumber_Test" time="0.004"/>
+  <testcase name="test_starttime_lt_endtime_and_workingEmployees_gt_nemployee()" classname="WorkSchedule_SetRequiredNumber_Test" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
