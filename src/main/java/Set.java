@@ -46,6 +46,7 @@ public class Set {
           a.remove(i);
           i++;
         } else {
+          a.remove(j);
           j++;
         }
       }

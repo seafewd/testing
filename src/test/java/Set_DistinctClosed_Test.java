@@ -28,7 +28,7 @@ class Set_DistinctClosed_Test {
     // must return true since 0 and 1 is in the set
     // and 0 + 1 = 1
     @Test
-    void distinctClosedAddition(Set set) {
+    void distinctClosedAddition() {
         ibo = Integer::sum;
         assertTrue(set.distinctClosed(ibo));
     }
@@ -37,7 +37,7 @@ class Set_DistinctClosed_Test {
     // must return false since no two elements in the set
     // can be multiplied to get a value already in the set
     @Test
-    void distinctClosedMultiplication(Set set) {
+    void distinctClosedMultiplication() {
         ibo = (left, right) -> left * right;
         assertFalse(set.distinctClosed(ibo));
     }
@@ -71,7 +71,7 @@ class Set_DistinctClosed_Test {
 
         ///////// Purpose: We will cover all statements except one and
         // cover branch 1 by stepping through both for-loops without
-        // looping. This can be achieved by inserting only one element
+        // looping. This can be achieved by inserting only two elements
         // in the set, thus returning true
         //  * Statement 1: 'int vi, vj'
         //  * Statement 2: 'for (Integer i : a)'
@@ -85,7 +85,9 @@ class Set_DistinctClosed_Test {
 
         Set s1 = new Set();
         s1.insert(1);
-        distinctClosedAddition(s1);
+        s1.insert(2);
+        ibo = Integer::sum;
+        assertTrue(s1.distinctClosed(ibo));
 
         ///////// Purpose: We will cover statement 1 and branch 2 testing on an empty set,
         // since that will make sure we do not enter the for-loops, thus returning false
@@ -94,7 +96,8 @@ class Set_DistinctClosed_Test {
 
         s1 = new Set();
         assertEquals(0, s1.toArray().length);
-        distinctClosedAddition(s1);
+        ibo = Integer::sum;
+        assertFalse(s1.distinctClosed(ibo));
 
 
         ///////// Purpose: We will cover branch 3 by making sure statement 6 is false
@@ -105,7 +108,7 @@ class Set_DistinctClosed_Test {
         s1 = new Set();
         s1.insert(1);
         ibo = Integer::sum;
-        assertFalse(set.distinctClosed(ibo));
+        assertFalse(s1.distinctClosed(ibo));
 
     }
 

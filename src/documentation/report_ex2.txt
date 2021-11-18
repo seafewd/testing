@@ -30,3 +30,9 @@ we chose to keep it as one method to avoid a potential explosion in the number o
 Note: What we defined as Branch 3 in the distinctClosed-test is from our understanding unreachable
 since the only way to execute the path is to have zero elements in the set, consequently hindering us
 from even entering the first for-loop.
+
+Found bugs:
+
+intersect:
+for example, let a = [1], b = [2] then a.intersect(b) should return []
+fix: a.remove(j); (line 49)
