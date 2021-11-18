@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="WorkSchedule_SetRequiredNumber_Test" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-11-18T17:27:27" hostname="LocalPro.local" time="0.022">
+<testsuite name="WorkSchedule_SetRequiredNumber_Test" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-11-18T22:39:50" hostname="LocalPro.local" time="0.005">
   <properties/>
-  <testcase name="test_starttime_lt_endtime_and_workingEmployees_lt_nemployee()" classname="WorkSchedule_SetRequiredNumber_Test" time="0.018"/>
+  <testcase name="test_starttime_lt_endtime_and_workingEmployees_lt_nemployee()" classname="WorkSchedule_SetRequiredNumber_Test" time="0.001"/>
   <testcase name="test_starttime_gt_endtime()" classname="WorkSchedule_SetRequiredNumber_Test" time="0.002"/>
-  <testcase name="test_starttime_lt_endtime_and_workingEmployees_gt_nemployee()" classname="WorkSchedule_SetRequiredNumber_Test" time="0.001"/>
+  <testcase name="test_starttime_lt_endtime_and_workingEmployees_gt_nemployee()" classname="WorkSchedule_SetRequiredNumber_Test" time="0.0"/>
   <system-out><![CDATA[
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
