@@ -39,9 +39,6 @@ public class WorkSchedule {
             else{
                 // requiredNumber is set to nemployee and workingEmployees is unchanged
                 this.schedule[i].requiredNumber = nemployee;
-
-                // the rest of the schedule is unchanged
-                //return;
             }
         }
 
