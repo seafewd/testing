@@ -14,7 +14,7 @@ class WorkSchedule_NextIncomplete_Test {
 
     // this test doesn't have all positions filled and should
     // thus return 4 since that is the first hour in which
-    // its required minimum positions aren't filled
+    // its required minimum number of positions aren't filled
 
     // the test also makes sure that the schedule is unchanged
     @Test

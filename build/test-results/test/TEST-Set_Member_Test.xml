@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Set_Member_Test" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-11-18T22:39:50" hostname="LocalPro.local" time="0.005">
+<testsuite name="Set_Member_Test" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-11-19T09:59:15" hostname="Alexanders-MacBook-Air.local" time="0.075">
   <properties/>
-  <testcase name="checkIsMember2()" classname="Set_Member_Test" time="0.0"/>
-  <testcase name="checkIsNotMemberEmpty()" classname="Set_Member_Test" time="0.0"/>
-  <testcase name="statementCoverage()" classname="Set_Member_Test" time="0.001"/>
-  <testcase name="checkIsNotMember()" classname="Set_Member_Test" time="0.001"/>
-  <testcase name="checkIsMember()" classname="Set_Member_Test" time="0.001"/>
+  <testcase name="checkIsMember2()" classname="Set_Member_Test" time="0.004"/>
+  <testcase name="checkIsNotMemberEmpty()" classname="Set_Member_Test" time="0.037"/>
+  <testcase name="statementCoverage()" classname="Set_Member_Test" time="0.003"/>
+  <testcase name="checkIsNotMember()" classname="Set_Member_Test" time="0.002"/>
+  <testcase name="checkIsMember()" classname="Set_Member_Test" time="0.004"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -92,3 +92,5 @@ Report
 
 Bugs found:
 fix: employee - 1 -> employee (line 36 in WorkSchedule)
+fix: private void addEmployee(String name) changed to public void addEmployee(String name) (line 128 in WorkSchedule)
+fix: added getSchedule() (line 16 in WorkSchedule)

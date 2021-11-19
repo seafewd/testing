@@ -25,20 +25,15 @@ public class WorkSchedule {
     public void setRequiredNumber(int nemployee, int starttime, int endtime) {
         // if starttime > endtime then the schedule is unchanged since we wont enter the loop
         for(int i = starttime; i <= endtime; ++i) {
+            // requiredNumber is set to nemployee
+            this.schedule[i].requiredNumber = nemployee;
+
             //if the length of workingEmployees is greater than nemployee
             if (nemployee < this.schedule[i].workingEmployees.length) {
-
-                // requiredNumber is set to nemployee
-                this.schedule[i].requiredNumber = nemployee;
 
                 // bug fix: employee - 1 -> employee
                 //workingEmployees keeps a number of employees equal to nemployee, discarding the rest
                 this.schedule[i].workingEmployees = (String[])Arrays.copyOf(this.schedule[i].workingEmployees, Math.max(nemployee, 0));
-            }
-            // otherwise
-            else{
-                // requiredNumber is set to nemployee and workingEmployees is unchanged
-                this.schedule[i].requiredNumber = nemployee;
             }
         }
 

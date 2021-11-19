@@ -18,13 +18,13 @@ class WorkSchedule_SetRequiredNumber_Test {
         int nemployee = 1;
         int starttime = 4;
         int endtime = 2;
-        //WorkSchedule.Hour[] oldSchedule = ws.getSchedule();
-        //WorkSchedule.Hour[] newSchedule = (WorkSchedule.Hour[]) Arrays.copyOf(oldSchedule, oldSchedule.length);
+
         ws.setRequiredNumber(nemployee, starttime, endtime);
         // should be unchanged
         System.out.println();
         // First element should be 0, same for remaining elements since starttime > endtime
         assertEquals(0, ws.getSchedule()[0].requiredNumber);
+        // check that the schedule is unchanged
         for(int i = 0; i < ws.getSchedule().length; i++)
             assertEquals(0, ws.getSchedule()[i].requiredNumber);
     }
