@@ -14,6 +14,10 @@ class Set_Intersect_Test {
     Set set = new Set();
     Set set2 = new Set();
 
+    // TODO only use one pair instead
+    Set s1 = new Set();
+    Set s2 = new Set();
+
     @BeforeEach
     void setUp() {
         set.insert(-5);
@@ -58,6 +62,39 @@ class Set_Intersect_Test {
     }
 
 
+    // Set s1 larger (.this set)
+    @Test
+    void testIntersectDifferentSize1(){
+        s1 = new Set();
+        s2 = new Set();
+
+        s1.insert(1);
+        s1.insert(2);
+        s2.insert(1);
+
+        s1.intersect(s2);
+        System.out.println(s1);
+        assertArrayEquals(s1.toArray(), s2.toArray());
+        assertTrue(s1.member(1) && !s1.member(2));
+    }
+
+    // Set s2 larger (the given set)
+    // Maybe redundant. More elements in s2 should not matter
+    // since we only remove elements in s1
+    @Test
+    void testIntersectDifferentSize2(){
+        s1 = new Set();
+        s2 = new Set();
+
+        s1.insert(1);
+        s2.insert(1);
+        s2.insert(2);
+
+        s1.intersect(s2);
+        assertTrue(s1.member(1) && !s1.member(2));
+    }
+
+
     ///////////////////////////////////////////////////
     /////// Statement and branch Coverage tests ///////
     ///////////////////////////////////////////////////
@@ -94,8 +131,8 @@ class Set_Intersect_Test {
         //  * Statement 3: i++
         //  * Statement 4: j++
 
-        Set s1 = new Set();
-        Set s2 = new Set();
+        s1 = new Set();
+        s2 = new Set();
         s1.insert(1);
         s2.insert(1);
         assertEquals(s1.toArray()[0], (s2.toArray()[0]));

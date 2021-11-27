@@ -34,5 +34,14 @@ from even entering the first for-loop.
 Found bugs:
 
 intersect:
-for example, let a = [1], b = [2] then a.intersect(b) should return []
+let a = {1}, b = {2} then a.intersect(b) should return {}
 fix: a.remove(j); (line 49)
+
+intersect:
+let a = {1,2}, b = {1} then a.intersect(b) should return {1}
+(but returned {1,2}, ie did not remove the last element)
+fix: trim the remaining elements with
+    while(i < a.size()){             //(line 56)
+          a.remove(i);
+          i++;
+        }
