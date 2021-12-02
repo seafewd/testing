@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="WorkSchedule_NextIncomplete_Tests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-12-02T14:38:41" hostname="Alexanders-MacBook-Air.local" time="0.033">
-  <properties/>
-  <testcase name="test_workingEmployees_gtOrEq_requiredNumber()" classname="WorkSchedule_NextIncomplete_Tests" time="0.033"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

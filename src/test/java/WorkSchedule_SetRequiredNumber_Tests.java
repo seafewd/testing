@@ -15,7 +15,6 @@ class WorkSchedule_SetRequiredNumber_Tests {
     void test_starttime_gt_endtime() {
         int workScheduleLength = 10;
         ws = new WorkSchedule(workScheduleLength);
-        ws2 = new WorkSchedule(workScheduleLength);
         int nemployee = 1;
         int starttime = 4;
         int endtime = 2;
@@ -38,11 +37,10 @@ class WorkSchedule_SetRequiredNumber_Tests {
         int nemployee = 1;
         int starttime = 8;
         int endtime = 10;
-        // workingEmployees = 3
+
         ws.setRequiredNumber(nemployee, starttime, endtime);
         // add three workingPeriods
-        for (int i = starttime; i <= endtime; i++) {
-            WorkSchedule.Hour hour = ws.readSchedule(i);
+        for (int i = starttime; i < endtime; i++) {
             ws.addWorkingPeriod("Axel", starttime, endtime);
             ws.addWorkingPeriod("Robert", starttime, endtime);
             ws.addWorkingPeriod("Pandi", starttime, endtime);
@@ -52,7 +50,7 @@ class WorkSchedule_SetRequiredNumber_Tests {
         for (int i = starttime; i < endtime; i++) {
             WorkSchedule.Hour hour = ws.readSchedule(i);
             assertEquals(nemployee, hour.requiredNumber);
-            assertEquals(1, hour.workingEmployees.length);
+            assertEquals(nemployee, hour.workingEmployees.length);
         }
     }
 
@@ -66,16 +64,15 @@ class WorkSchedule_SetRequiredNumber_Tests {
         int nemployee = 3;
         int starttime = 8;
         int endtime = 10;
-        // workingEmployees = 1
+
         ws.setRequiredNumber(nemployee, starttime, endtime);
-        // add one employee as well as one workingPeriod
-        for (int i = starttime; i <= endtime; i++) {
-            WorkSchedule.Hour hour = ws.readSchedule(i);
+        // add a workingPeriod with one employee
+        for (int i = starttime; i < endtime; i++)
             ws.addWorkingPeriod("Axel", starttime, endtime);
-        }
+
         // assert that three employee are needed for these hours
         // as well as that workingEmployees is unchanged
-        for (int i = starttime; i <= endtime; i++) {
+        for (int i = starttime; i < endtime; i++) {
             WorkSchedule.Hour hour = ws.readSchedule(starttime);
             assertEquals(nemployee, hour.requiredNumber);
             assertEquals(1, hour.workingEmployees.length);

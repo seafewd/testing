@@ -41,6 +41,8 @@ class WorkSchedule_NextIncomplete_Tests {
         for (int i = 0; i < workScheduleLength; i++) {
             WorkSchedule.Hour hour = ws.readSchedule(i);
             if (hour.workingEmployees.length < hour.requiredNumber) {
+                // BUG found? this should return 4 (i = 4) because hour 4 is the first instance
+                // of an hour when the number of employees is less than the required number.
                 result = ws.nextIncomplete(i);
                 break;
             }
