@@ -1,0 +1,47 @@
+We derived the statement coverage tests by looking at each statement in the method
+
+For example, the list for the statements in the method insert we defined in the following way
+
+ * Statement 1: 'the for loop'
+ * Statement 2: 'if (a.get(i) > x)'
+ * Statement 3: 'a.add(i, x)'
+ * Statement 4: 'if (a.get(i) == x)'
+ * Statement 5: 'a.add(x)'
+
+We made sure each to insert and check/assert in such a way that we could in effect guarantee
+that each statement/node was executed. Exactly why we made the decisions we did can be found
+in the comments.
+
+These tests also covered all the branches, which in this case were
+
+ * Branch 1: through the for loop
+ * Branch 2: not though the for loop (last statement 'a.add(x)')
+ * Branch 2: through 'if (a.get(i) > x)'
+ * Branch 3: through 'if (a.get(i) == x)'
+
+
+We have explained each decision in the comments
+
+For each class we made a statement and branch coverage method. Each block in that
+method is preceded by a comment stating the purpose followed by a list of the statements
+covered. Perhaps dividing these blocks into separate methods would be preferred, but
+we chose to keep it as one method to avoid a potential explosion in the number of methods.
+
+Note: What we defined as Branch 3 in the distinctClosed-test is from our understanding unreachable
+since the only way to execute the path is to have zero elements in the set, consequently hindering us
+from even entering the first for-loop.
+
+Found bugs:
+
+intersect:
+let a = {1}, b = {2} then a.intersect(b) should return {}
+fix: a.remove(j); (line 49)
+
+intersect:
+let a = {1,2}, b = {1} then a.intersect(b) should return {1}
+(but returned {1,2}, ie did not remove the last element)
+fix: trim the remaining elements with
+    while(i < a.size()){             //(line 56)
+          a.remove(i);
+          i++;
+        }

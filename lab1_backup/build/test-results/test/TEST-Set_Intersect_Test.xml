@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Set_Intersect_Tests" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-12-01T12:03:34" hostname="Alexanders-Air.lan" time="0.175">
+  <properties/>
+  <testcase name="statementCoverage()" classname="Set_Intersect_Tests" time="0.122"/>
+  <testcase name="testIntersectDifferentSize1()" classname="Set_Intersect_Tests" time="0.017"/>
+  <testcase name="testIntersectDifferentSize2()" classname="Set_Intersect_Tests" time="0.008"/>
+  <testcase name="testRemove2()" classname="Set_Intersect_Tests" time="0.005"/>
+  <testcase name="testRemove()" classname="Set_Intersect_Tests" time="0.002"/>
+  <system-out><![CDATA[Set@62229aa7
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

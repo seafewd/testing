@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Set_DistinctClosed_Tests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-12-01T12:03:34" hostname="Alexanders-Air.lan" time="0.008">
+  <properties/>
+  <testcase name="statementAndBranchCoverage()" classname="Set_DistinctClosed_Tests" time="0.008"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

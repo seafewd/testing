@@ -1,0 +1,91 @@
+==================
+setRequiredNumber(int nemployee, int starttime, int endtime)
+==================
+
+------------------
+Report
+------------------
+  Input space:
+    0 <= nemployee,
+    0 <= starttime,
+    0 <= endtime
+  ----------------
+  Partition #1:
+    starttime > endtime
+    // test whether we can assign one employee between hour 8 and hour 10
+    test_starttime_gt_endtime:
+      input:
+        nemployee = 1,
+        starttime = 10,
+        endtime = 8
+      expected: setRequiredNumber(1, 10, 8) = void (unchanged schedule)
+  ----------------
+  Partition #2:
+    starttime < endtime,
+    workingEmployees > nemployee
+    // test desc 2
+    test_starttime_lt_endtime_and_workingEmployees_gt_nemployee:
+      input:
+        nemployee = 1
+        starttime = 8,
+        endtime = 10,
+        workingEmployees = 3,
+      expected: setRequiredNumber(1, 8, 10) =
+        requiredNumber = 1,
+        workingEmployees = 1
+  ----------------
+  Partition #3:
+    starttime < endtime,
+    workingEmployees < nemployee
+    // test desc 3
+    test_starttime_lt_endtime_and_workingEmployees_lt_nemployee
+      input:
+        nemployee = 3
+        starttime = 8,
+        endtime = 10,
+        workingEmployees = 1,
+      expected: setRequiredNumber(3, 8, 10) =
+        requiredNumber = 3,
+        workingEmployees = 1
+
+
+==================
+nextIncomplete(int currenttime)
+==================
+
+------------------
+Report
+------------------
+  Input space:
+    currenttime >= 0,
+    currenttime < size
+  ----------------
+  Partition #1:
+    // test whether we can get the first instance of an
+    // hour which doesn't yet have its positions filled
+    // with workingEmployees, or -1 if all positions filled
+    test_workingEmployees_lt_requiredNumber
+      input:
+        schedule: [
+            new Hour(1) - 1 employee working, 1 needed,
+            new Hour(2) - 2 employees working, 2 needed,
+            new Hour(3) - 3 employees working, 3 needed,
+            new Hour(4) - 3 employees working, 4 needed,
+            new Hour(5) - 1 employee working, 2 needed
+        ]
+      expected: 4
+  ----------------
+  Partition #2:
+    // test whether we can get the first instance of an
+    // hour which doesn't yet have its positions filled
+    // with workingEmployees, or -1 if all positions filled
+    test_workingEmployees_gtOrEq_requiredNumber
+      input:
+        schedule: [
+            new Hour(1) - 1 employee working, 1 needed,
+            new Hour(2) - 2 employees working, 2 needed,
+            new Hour(3) - 3 employees working, 3 needed,
+            new Hour(4) - 4 employees working, 4 needed,
+            new Hour(5) - 2 employee working, 2 needed
+        ]
+      expected: -1

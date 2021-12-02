@@ -12,11 +12,6 @@ public class WorkSchedule {
 
     }
 
-    // "bug" fix: added getSchedule
-    public Hour[] getSchedule() {
-        return this.schedule;
-    }
-
     public Hour readSchedule(int time) {
         return this.schedule[time];
     }
@@ -31,9 +26,8 @@ public class WorkSchedule {
             //if the length of workingEmployees is greater than nemployee
             if (nemployee < this.schedule[i].workingEmployees.length) {
 
-                // bug fix: employee - 1 -> employee
                 //workingEmployees keeps a number of employees equal to nemployee, discarding the rest
-                this.schedule[i].workingEmployees = (String[])Arrays.copyOf(this.schedule[i].workingEmployees, Math.max(nemployee, 0));
+                this.schedule[i].workingEmployees = (String[])Arrays.copyOf(this.schedule[i].workingEmployees, Math.max(nemployee - 1, 0));
             }
         }
 
@@ -123,9 +117,9 @@ public class WorkSchedule {
             return res;
         }
 
-        // bug fixes:
-        // private -> public
-        public void addEmployee(String name) {
+
+
+        private void addEmployee(String name) {
             if (this.workingEmployees.length < this.requiredNumber) {
                 this.workingEmployees = (String[])Arrays.copyOf(this.workingEmployees, this.workingEmployees.length + 1);
                 this.workingEmployees[this.workingEmployees.length - 1] = name;

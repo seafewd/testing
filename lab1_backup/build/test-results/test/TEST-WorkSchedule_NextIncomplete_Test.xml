@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="WorkSchedule_NextIncomplete_Tests" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-12-01T12:03:34" hostname="Alexanders-Air.lan" time="0.027">
+  <properties/>
+  <testcase name="test_workingEmployees_gtOrEq_requiredNumber()" classname="WorkSchedule_NextIncomplete_Tests" time="0.003"/>
+  <testcase name="test_workingEmployees_lt_requiredNumber()" classname="WorkSchedule_NextIncomplete_Tests" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
